@@ -1,5 +1,4 @@
-# Age_of_the_Universe
-Calculating the Age of the Universe using Supernova redshift and luminosity measurements data
+# Finding the Age of the Universe using Supernova Data
 
 #### This notebook uses redshift and maximum apparent magnitude measurementsof type IA Supernovae from the __[Open Supernova Catalog](https://sne.space/)__ to estimate the Age of the Universe at 14.6 billion years (within 6% of the generally accepted value: __[13.8 billion years](https://en.wikipedia.org/wiki/Age_of_the_universe)__).  
 
