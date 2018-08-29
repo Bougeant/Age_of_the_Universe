@@ -1,6 +1,6 @@
 # Finding the Age of the Universe using Supernova Data
 
-#### This notebook uses redshift and maximum apparent magnitude measurements of type Ia Supernovae from the [Open Supernova Catalog](https://sne.space/) to estimate the Age of the Universe at 14.6 billion years (within 6% of the generally accepted value: [13.8 billion years](https://en.wikipedia.org/wiki/Age_of_the_universe)).  
+#### This notebook uses redshift and maximum apparent magnitude measurements of type Ia Supernovae from the [Open Supernova Catalog](https://sne.space/) to estimate the Age of the Universe at 14.1 billion years (within 3% of the generally accepted value: [13.8 billion years](https://en.wikipedia.org/wiki/Age_of_the_universe)).  
 
 ![3D_view_type_Ia_supernovae.gif](./images/3D_view_type_Ia_supernovae.gif)
 
@@ -20,8 +20,11 @@ The first step in this analysis is to convert redshift and apparent magnitude me
 
 Maximum apparent magnitude measurements are converted into distance from the observer by applying the following definition: <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;m&space;-&space;M&space;=&space;5&space;\log{\frac{d}{10}}" title="m - M = 5 \log{\frac{d}{10}}" />, or <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;d&space;=&space;10^{\frac{5&space;&plus;&space;m&space;-&space;M}{5}}" title="d = 10^{\frac{5 + m - M}{5}}" />, where <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;m" title="m" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;M" title="M" /> are the apparent and absolute maximum magnitude of the supernova, respectively, and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;d" title="d" /> is its distance in Parsec (pc).
 
-The typical maximum absolute magnitude (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;M" title="M" />) of type Ia supernovae can be known by estimating the distance of relatively close supernovae, which distance are known thanks to other standard candles (e.g. [Ceipheid variable stars](https://en.wikipedia.org/wiki/Cepheid_variable)). In practice, the average absolute magnitude of type Ia supernovae from the Open Supernova Database is considered in this analysis (M = -18.9).
+Maximum apparent magnitude measurements are converted into distance from the observer by applying the following definition: $m - M - A_v = 5 \log{\frac{d}{10}}$, or $d = 10^{\frac{5 + m - M - A_v}{5}}$, where $m$ and $M$ are the apparent and absolute maximum magnitude of the supernova, respectively, $A_v$ is the extinction in the V band and $d$ is its distance in Parsec (pc). 
 
+The extinction coefficient, $A_v$ is estimated with [the following experimental relationship](http://astronomy.swin.edu.au/cosmos/I/Interstellar+Reddening): $A_v = 3.2 E(B{\text-}V)$, where $E(B{\text-}V)$ is the color excess defined as the difference between the observed and intrinsic [color index B-V](https://en.wikipedia.org/wiki/Color_index) (the extinction caused by interstellar dust leads to a decrease in apparent magnitude and a reddening of luminous objects unrelated to redshift).
+
+The typical maximum absolute magnitude (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;M" title="M" />) of type Ia supernovae can be known by estimating the distance of relatively close supernovae, which distance are known thanks to other standard candles (e.g. [Ceipheid variable stars](https://en.wikipedia.org/wiki/Cepheid_variable)). In practice, the average absolute magnitude of closee (redshift < 0.1) type Ia supernovae from the Open Supernova Database is considered in this analysis (M = -18.8).
 
 Above is a  3D plot of all type Ia supernovae in the Open Supernova Catalog, created with Plotly (a dynamic version of this 3D plot is available [here](https://htmlpreview.github.io/?https://github.com/Bougeant/Age_of_the_Universe/blob/master/images/3D_view_type_Ia_supernovae.html)). It shows that the further a type Ia supernova is from the Milky Way, the more redshifted it tends to be (represented with the red color) . This 3D graph also shows that most distant type Ia supernovae are detected in very narrow beams. This is probably due to the fact that the search for distant supernovae is concentrated in very small regions of the sky (it would be impractical to monitor supernovae in every direction because the search for distant supernovae requires powerful telescopes over long periods of time). Furthermore, it clearly shows that few supernovae are detected in the galactic plane due to the [strong extinction caused by dust in the Milky Way](https://en.wikipedia.org/wiki/Zone_of_Avoidance). This 3D plot required the conversion of declination and right ascension from sexagesimal (i.e. hour:minute:second) to decimal, and then the conversion to carthesian coordinates using the following equations (where $d$ is the distance, $\theta$ is the declination, and $\phi$ is the right ascension): 
 
@@ -33,7 +36,7 @@ In the graph below, the velocity infered from redshift is plotted as a function 
 
 <p align="center"><img src="./images/redshift_velocity_vs_distance.png" width = "800"></p>
 
-Then, the linear relationship between distance and velocity of type Ia supernova is determined using a [random sample consensus (RANSAC)](https://en.wikipedia.org/wiki/Random_sample_consensus) algorithm in order to exclude clear outliers from the linear fit. This relationship which corresponds to the expansion rate of the universe per unit distance, is known as the [Hubble constant](https://en.wikipedia.org/wiki/Hubble's_law) (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;H_0" title="H_0" />) and is expressed in (km/s)/Mpc. This calculation resulted in an estimate for the Hubble constant of 66.8 (km/s)/MPc, which is very close to the commonly accepted value of this parameter (~70 (km/s)/MPc).
+Then, the linear relationship between distance and velocity of type Ia supernova is determined using a [random sample consensus (RANSAC)](https://en.wikipedia.org/wiki/Random_sample_consensus) algorithm in order to exclude clear outliers from the linear fit. This relationship which corresponds to the expansion rate of the universe per unit distance, is known as the [Hubble constant](https://en.wikipedia.org/wiki/Hubble's_law) (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;H_0" title="H_0" />) and is expressed in (km/s)/Mpc. This calculation resulted in an estimate for the Hubble constant of 69.2 (km/s)/MPc, which is very close to the commonly accepted value of this parameter (~70 (km/s)/MPc).
 
 The [lookback time](https://arxiv.org/pdf/astro-ph/9905116.pdf) (i.e. the time since the light was emitted from a luminous object) as a function of redshift is expressed as follows:
 
@@ -47,15 +50,15 @@ This equation can be simplified by assuming that the [universe is flat](https://
 
 By integrating the redshift over infinity, we obtain the Age of the Universe according to this simplified model:
 
-<p align="center"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;t_0&space;=&space;\cfrac{1}{H_0}&space;{\displaystyle\int_{0}^{\infty}&space;\cfrac{dz'}{(1&plus;z')^2}}&space;=&space;\cfrac{1}{H_0}$&space;=&space;14.6&space;billion&space;years" title="t_0 = \cfrac{1}{H_0} {\displaystyle\int_{0}^{\infty} \cfrac{dz'}{(1+z')^2}} = \cfrac{1}{H_0}$ = 14.6 billion years" /></p>
+<p align="center"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;t_0&space;=&space;\cfrac{1}{H_0}&space;{\displaystyle\int_{0}^{\infty}&space;\cfrac{dz'}{(1&plus;z')^2}}&space;=&space;\cfrac{1}{H_0}$&space;=&space;14.6&space;billion&space;years" title="t_0 = \cfrac{1}{H_0} {\displaystyle\int_{0}^{\infty} \cfrac{dz'}{(1+z')^2}} = \cfrac{1}{H_0}$ = 14.1 billion years" /></p>
 
-This value is only 6% off the [commonly accepted value of 13.8 billion years](https://en.wikipedia.org/wiki/Age_of_the_universe#Planck) derived using the Lambda CDM model.
+This value is within only 3% of the [commonly accepted value of 13.8 billion years](https://en.wikipedia.org/wiki/Age_of_the_universe#Planck) derived using the Lambda CDM model.
 
 The graph below shows the lookback time of type Ia supernova (calculated using the above simplified equation for <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$t_L$" title="$t_L$" /> based and redshift measurements) as a function of the comoving distance (obtained using maximum apparent magnitude measurements). This graph also displays the lookback time vs distance, predicted by the empty universe model taking into account the following relationship between comoving distance and redshift:
 
 <p align="center"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$d_c&space;=&space;\cfrac{c}{H_0}&space;{\displaystyle\int_{0}^{z}&space;\cfrac{dz'}{(1&plus;z')}}&space;=&space;\cfrac{c}{H_0}&space;\ln(1&plus;z)$" title="$d_c = \cfrac{c}{H_0} {\displaystyle\int_{0}^{z} \cfrac{dz'}{(1+z')}} = \cfrac{c}{H_0} \ln(1+z)$" /></p>
 
-In this graph, when the redshift becomes infinitely large (i.e. for "light" emitted immediately after the Big Bang, when the Universe was infinitely small), the lookback time converges to the predicted age of the Universe (14.3 billion years).
+In this graph, when the redshift becomes infinitely large (i.e. for "light" emitted immediately after the Big Bang, when the Universe was infinitely small), the lookback time converges to the predicted age of the Universe (14.1 billion years).
 
 <p align="center"><img src="./images/lookback_time_vs_distance.png" width = "800"></p>
 
