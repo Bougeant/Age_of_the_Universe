@@ -10,7 +10,7 @@ A [type Ia Supernova](https://en.wikipedia.org/wiki/Type_Ia_supernova) is a type
 
 Because their trigger mechanism always occur in the approximately same conditions, they all have a similar intensity. For this reason, they are known as [standard candles](https://en.wikipedia.org/wiki/Cosmic_distance_ladder#Standard_candles) and are very useful for measuring the distance to their host galaxy because their apparent magnitude as seen from earth is directly linked to their distance from us. 
 
-Thanks to this property and their extreme luminousity, type Ia supernovae can be used to determine the age of the universe by measuring their [apparent magnitude](https://en.wikipedia.org/wiki/Magnitude_%28astronomy%29#Apparent_magnitude) and [redshift](https://en.wikipedia.org/wiki/Redshift) (linked to their velocity away from us caused by the expension of the universe). 
+Thanks to this property and their extreme luminosity, type Ia supernovae can be used to determine the age of the universe by measuring their [apparent magnitude](https://en.wikipedia.org/wiki/Magnitude_%28astronomy%29#Apparent_magnitude) and [redshift](https://en.wikipedia.org/wiki/Redshift) (linked to their velocity away from us caused by the expansion of the universe). 
 
 ## Description and Main Results
 
@@ -22,7 +22,7 @@ Maximum apparent magnitude measurements are converted into distance from the obs
 
 The extinction coefficient, <img src="https://latex.codecogs.com/gif.latex?A_v" title="A_v" /> is estimated with [the following experimental relationship](http://astronomy.swin.edu.au/cosmos/I/Interstellar+Reddening): <img src="https://latex.codecogs.com/gif.latex?A_v&space;=&space;3.2&space;E(B{\text-}V)" title="A_v = 3.2 E(B{\text-}V)" />, where <img src="https://latex.codecogs.com/gif.latex?E(B{\text-}V)" title="E(B{\text-}V)" /> is the color excess defined as the difference between the observed and intrinsic [color index B-V](https://en.wikipedia.org/wiki/Color_index) (the extinction caused by interstellar dust leads to a decrease in apparent magnitude and a reddening of luminous objects unrelated to redshift).
 
-The typical maximum absolute magnitude (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;M" title="M" />) of type Ia supernovae can be known by estimating the distance of relatively close supernovae, which distance are known thanks to other standard candles (e.g. [Ceipheid variable stars](https://en.wikipedia.org/wiki/Cepheid_variable)). In practice, the average absolute magnitude of closee (redshift < 0.1) type Ia supernovae from the Open Supernova Database is considered in this analysis (M = -18.8).
+The typical maximum absolute magnitude (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;M" title="M" />) of type Ia supernovae can be known by estimating the distance of relatively close supernovae, which distance are known thanks to other standard candles (e.g. [Ceipheid variable stars](https://en.wikipedia.org/wiki/Cepheid_variable)). In practice, the average absolute magnitude of close (redshift < 0.1) type Ia supernovae from the Open Supernova Database is considered in this analysis (M = -18.8).
 
 Above is a  3D plot of all type Ia supernovae in the Open Supernova Catalog, created with Plotly (a dynamic version of this 3D plot is available [here](https://htmlpreview.github.io/?https://github.com/Bougeant/Age_of_the_Universe/blob/master/images/3D_view_type_Ia_supernovae.html)). It shows that the further a type Ia supernova is from the Milky Way, the more redshifted it tends to be (represented with the red color) . This 3D graph also shows that most distant type Ia supernovae are detected in very narrow beams. This is probably due to the fact that the search for distant supernovae is concentrated in very small regions of the sky (it would be impractical to monitor supernovae in every direction because the search for distant supernovae requires powerful telescopes over long periods of time). Furthermore, it clearly shows that few supernovae are detected in the galactic plane due to the [strong extinction caused by dust in the Milky Way](https://en.wikipedia.org/wiki/Zone_of_Avoidance). This 3D plot required the conversion of declination and right ascension from sexagesimal (i.e. hour:minute:second) to decimal, and then the conversion to carthesian coordinates using the following equations (where $d$ is the distance, $\theta$ is the declination, and $\phi$ is the right ascension): 
 
@@ -30,7 +30,7 @@ Above is a  3D plot of all type Ia supernovae in the Open Supernova Catalog, cre
 - <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;y&space;=&space;d&space;\sin(\theta)&space;\sin(\phi)" title="y = d \sin(\theta) \sin(\phi)" />
 - <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;z&space;=&space;d&space;\cos(\theta)" title="z = d \cos(\theta)" /> 
 
-In the graph below, the velocity infered from redshift is plotted as a function of the distance to the type Ia supernova
+In the graph below, the velocity inferred from redshift is plotted as a function of the distance to the type Ia supernova
 
 <p align="center"><img src="./images/redshift_velocity_vs_distance.png" width = "800"></p>
 
@@ -60,7 +60,7 @@ In this graph, when the redshift becomes infinitely large (i.e. for "light" emit
 
 <p align="center"><img src="./images/lookback_time_vs_distance.png" width = "800"></p>
 
-This simplified model is surprisingly accurate to find the lookback time up to now and ultimately, the age of the universe, when compared to the generally accepted [Lambda CDM model](https://en.wikipedia.org/wiki/Lambda-CDM_model) (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_\Lambda&space;=&space;0.73$" title="$\Omega_\Lambda = 0.73$" />, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_M&space;=&space;0.27$" title="$\Omega_M = 0.27$" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_k&space;=&space;0$" title="$\Omega_k = 0$" />). This is due to the fact that, on average, phases of accelerating expension of the universe have been canceled out by the action of gravity between massive objects). However, the empty universe model is expected to diverge from the Lambda CDM model in the future as the universe becomes dominated by dark energy, causing it to [expand at an exponential rate](https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe).
+This simplified model is surprisingly accurate to find the lookback time up to now and ultimately, the age of the universe, when compared to the generally accepted [Lambda CDM model](https://en.wikipedia.org/wiki/Lambda-CDM_model) (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_\Lambda&space;=&space;0.73$" title="$\Omega_\Lambda = 0.73$" />, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_M&space;=&space;0.27$" title="$\Omega_M = 0.27$" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_k&space;=&space;0$" title="$\Omega_k = 0$" />). This is due to the fact that, on average, phases of accelerating expansion of the universe have been canceled out by the action of gravity between massive objects). However, the empty universe model is expected to diverge from the Lambda CDM model in the future as the universe becomes dominated by dark energy, causing it to [expand at an exponential rate](https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe).
 
 ## Credits
 
@@ -68,4 +68,4 @@ This simplified model is surprisingly accurate to find the lookback time up to n
 
 - Distance measures in cosmology, David W. Hogg: https://arxiv.org/pdf/astro-ph/9905116.pdf
 
-- Thank you to Zoni Nation who worked on a [similar project using Galaxy data](https://github.com/zonination/galaxies) for giving me the inspiration
+- Thank you to Zoni Nation who worked on a [similar project using Galaxy data](https://github.com/zonination/galaxies) for giving me the inspiration for this project
