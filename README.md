@@ -62,6 +62,11 @@ In this graph, when the redshift becomes infinitely large (i.e. for "light" emit
 
 This simplified model is surprisingly accurate to find the lookback time up to now and ultimately, the age of the universe, when compared to the generally accepted [Lambda CDM model](https://en.wikipedia.org/wiki/Lambda-CDM_model) (<img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_\Lambda&space;=&space;0.73$" title="$\Omega_\Lambda = 0.73$" />, <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_M&space;=&space;0.27$" title="$\Omega_M = 0.27$" /> and <img src="https://latex.codecogs.com/svg.latex?\inline&space;\dpi{100}&space;$\Omega_k&space;=&space;0$" title="$\Omega_k = 0$" />). This is due to the fact that, on average, phases of accelerating expansion of the universe have been canceled out by the action of gravity between massive objects). However, the empty universe model is expected to diverge from the Lambda CDM model in the future as the universe becomes dominated by dark energy, causing it to [expand at an exponential rate](https://en.wikipedia.org/wiki/Accelerating_expansion_of_the_universe).
 
+## How to use
+
+To use this notebook, start by cloning this repository. In addition to the main data science Python libraries (numpy, pandas, seaborn, sklearn, etc...), this notebook requires the installation of the following modules:
+ - plotly: v3.1.1
+
 ## Credits
 
 - Open Supernova Catalog: https://sne.space/
